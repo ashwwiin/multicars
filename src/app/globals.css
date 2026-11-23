@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #13222b;
+  --color-ink-soft: #1f3541;
+  --color-steel-50: #f0f3f4;
+  --color-steel-100: #e3e8ea;
+  --color-steel-300: #b9c4ca;
+  --color-steel-600: #55656e;
+  --color-hivis: #ffd60a;
+  --color-hivis-deep: #e6bf00;
+  --color-signal: #c81e3a;
+
+  --font-display: "Archivo Variable", "Arial Narrow", sans-serif;
+  --font-sans: "Figtree Variable", system-ui, sans-serif;
+}
+
+:root {
+  --header-h: 64px;
+}
+
+html {
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+body {
+  background: var(--color-steel-50);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Condensed display type: the one place we spend typographic personality. */
+.display {
+  font-family: var(--font-display);
+  font-stretch: 68%;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.display-sm {
+  font-family: var(--font-display);
+  font-stretch: 78%;
+  font-weight: 750;
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+}
+
+/* Plain long-form text (privacy policy). */
+.legal h2 {
+  font-family: var(--font-display);
+  font-stretch: 78%;
+  font-weight: 750;
+  font-size: 1.875rem;
+  line-height: 1.1;
+}
+.legal p,
+.legal ul {
+  margin-top: 0.5rem;
+}
+.legal ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.legal li + li {
+  margin-top: 0.25rem;
+}
+
+/* Visible keyboard focus everywhere. */
+:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.on-dark :focus-visible {
+  outline-color: var(--color-hivis);
+}
+
+/* The single orchestrated moment: the job card settles into place on load. */
+@keyframes card-settle {
+  from {
+    opacity: 0;
+    transform: translateY(14px) rotate(-1.2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes stamp-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.6) rotate(-14deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.94) rotate(-8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-8deg);
+  }
+}
+
+.job-card-enter {
+  animation: card-settle 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.stamp-enter {
+  animation: stamp-in 380ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .job-card-enter,
+  .stamp-enter {
+    animation: none;
+  }
+  .stamp-enter {
+    transform: rotate(-8deg);
+  }
+}
+
+/* Tool-wall pattern used on dark panels: evenly spaced pegboard dots. */
+.pegboard {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.09) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 22px 22px;
+}
+
+/* Hazard edge used once, on the urgent breakdown strip. */
+.hazard {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-hivis) 0 14px,
+    var(--color-ink) 14px 28px
+  );
+}

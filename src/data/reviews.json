@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Deepak V.",
+    "rating": 5,
+    "service": "Periodic service and oil change",
+    "text": "Great workshop in Morazha. Got my oil and filters replaced with a clear written estimate up front.",
+    "id": "rev-1795425091272",
+    "date": "Just now",
+    "source": "direct"
+  },
+  {
+    "id": "rev-1",
+    "name": "Akhil K.",
+    "service": "Denting, painting and detailing",
+    "rating": 5,
+    "text": "Got my car bodywork and bumper denting repaired here after a scrape near Kannapuram. Paint finish matches the factory shade perfectly. They gave a clear written quote before touching the car.",
+    "date": "2 weeks ago",
+    "source": "google"
+  },
+  {
+    "id": "rev-2",
+    "name": "Rahul M.",
+    "service": "AC and cooling",
+    "rating": 5,
+    "text": "AC stopped cooling on my Swift during peak heat. Diagnosed the compressor coil issue in 10 minutes, gave me the exact price, and fixed it the same afternoon.",
+    "date": "1 month ago",
+    "source": "direct"
+  },
+  {
+    "id": "rev-3",
+    "name": "Sreejith P.",
+    "service": "Brakes, suspension and steering",
+    "rating": 5,
+    "text": "Very transparent garage in Morazha. Showed me the worn suspension bushes before replacing them. No surprise items added to the final bill.",
+    "date": "2 months ago",
+    "source": "direct"
+  }
+]
